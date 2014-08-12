@@ -1,23 +1,42 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/blur_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/sharedimage"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".IdentifyingActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/sharedimage" />
+        android:id="@+id/medium_img"
+        android:layout_width="@dimen/default_small_img_width"
+        android:layout_height="@dimen/default_small_img_height"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/pic0010" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="@dimen/default_small_img_width"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="#dddddddd"
-        android:text="@string/identifying" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/identifying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/identifying"
+            android:textColor="#dddddddd"
+            android:textSize="18sp" />
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="80dp" />
+    </LinearLayout>
 
-</RelativeLayout>
+    <View
+        android:layout_width="@dimen/default_small_img_width"
+        android:layout_height="1dp"
+        android:background="@android:color/white" />
+
+</LinearLayout>
